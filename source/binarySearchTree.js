@@ -1,6 +1,4 @@
 
-// const util = require('util')
-
 // 实现二叉树查找
 function BinarySearchTree() {
     var Node = function (key) {
@@ -77,7 +75,7 @@ function BinarySearchTree() {
         postOrderTraverseNode(root, callback)
     }
 
-    // 找到树种最大的值
+    // 找到树中最小的值
     var minNode = function(node) {
         if(node) {
             while(node && node.left !== null) {
@@ -190,40 +188,5 @@ function BinarySearchTree() {
 }
 
 
-//-----------------------测试代码-------------------------
-var tree = new BinarySearchTree()
-tree.insert(11)
-tree.insert(7)
-tree.insert(15)
-tree.insert(5)
-tree.insert(3)
-tree.insert(9)
-tree.insert(8)
-tree.insert(10)
-tree.insert(13)
-tree.insert(12)
-tree.insert(14)
-tree.insert(20)
-tree.insert(18)
-tree.insert(25)
-tree.insert(6)
+module.exports = BinarySearchTree
 
-
-// console.log(tree.printf())
-
-
-// 检测树的遍历
-function printNode(value) {
-    console.log(value)
-}
-
-// tree.inOrderTraverse(printNode)
-// tree.preOrderTraverse(printNode)
-// tree.postOrderTraverse(printNode)
-
-// console.log(tree.min())
-// console.log(tree.max())
-
-tree.printf()
-tree.remove(15)
-tree.printf()

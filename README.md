@@ -77,11 +77,69 @@
 
     HashMap类， 也是字典的一种
 
+    为了处理key（HashCode）冲突的问题， 使用了两种方法， 分离链接（separateChaining）和 线性探查（linearProbing）
+
     ```
         put remove get
+
+        // 更加好的散列函数
+
+        var djb2HashCode = function(key) {
+            var hash = 5381
+            for (let i = 0; i < key.length; i++) {
+                hash = hash*33 + key.charCodeAt(i)           
+            }
+
+            return hash % 1013
+        } 
+        
+    ```
+
+### 树（非顺序数据结构）
+    二叉树和二叉搜索树（BST）bi
+    目前只研究二叉搜索树，只允许左边节点存储小的值， 在右侧节点存储大的值
+
+    ```
+        insert， search，max， min， remove
+        inOrderTraverseNode（中序遍历）， 从最小到最大的顺序访问所有节点
+        preOrderTraverse (先序遍历) ，以优先于后代节点的顺序访问每个节点的
+        postOrderTraverse（后续遍历），先访问节点的后代节点，再访问节点本身。
     ```
 
 
+### 图
+
+    实现方法：邻接矩阵，邻接表， 关联矩阵， 此处使用邻接矩阵实现
+
+    ```
+        addVertex, addEdge, toString, BFS, DFS
+    ```
+算法 | 数据结构 |  描述  
+-|-|-
+深度优先搜索 | 栈  | 通过将顶点存入栈中，顶点是沿着路径被探索的，存在新的相邻顶点就去访问 |  
+广度优先搜索 | 队列 | 通过将顶点存入队列中（在第4章中学习过），最先入队列的顶点先被探索 |
 
 
 
+### 排序和搜索算法
+
+    多种排序方式的实现
+
+    ```
+        bubbleSort, selectionSort, insertionSort, mergeSort, quickSort
+    ```
+    
+    查找方式： 顺序查找和二分查找
+
+    ```
+        sequentialSearch, binarySearch
+    ```
+    
+
+### 算法补充知识
+    递归函数
+    recursiveFunction 
+
+    动态规划（最少找零问题实现）
+
+    贪心算法

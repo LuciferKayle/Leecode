@@ -1,4 +1,5 @@
-function MinCoinChange(coins) {
+// 动态规划实现最少找零
+function minCoinChangeByDp(coins) {
     var coins = coins
     var cache = {}
 
@@ -14,7 +15,7 @@ function MinCoinChange(coins) {
 
         var min = [], newMin, newAmount
 
-        for (let i = 0 i < coins.length i++) {
+        for (let i = 0 ;i < coins.length ;i++) {
             var coin = coins[i]
             newAmount = amount - coin
 
@@ -35,28 +36,4 @@ function MinCoinChange(coins) {
     }
 }
 
-
-function MinCoinChangeByTanXin(coins) {
-    var coins = coins
-
-    this.makeChange = function (amount) {
-        var change = [], total = 0
-        for (var i = coins.length - 1 i >= 0 i--) {
-            var coin = coins[i]
-            while(total + coin <= amount) {
-                change.push(coin)
-                total += coin
-            }            
-        }   
-
-        return change
-    }
-}
-
-
-var minCoinChange = new MinCoinChangeByTanXin([1, 3, 4])
- console.log(minCoinChange.makeChange(6))
-
-var minCoinChange = new MinCoinChange([1, 3, 4])
- console.log(minCoinChange.makeChange(6))
-
+module.exports = minCoinChangeByDp

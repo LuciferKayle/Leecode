@@ -1,4 +1,6 @@
-const Dictionary = require('../source/dictionary')
+// const Dictionary = require('../source/dictionary')
+const { Dictionary } = require('../index')
+
 
 
 var dictionary = new Dictionary(); 

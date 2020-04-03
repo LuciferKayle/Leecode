@@ -18,8 +18,8 @@ function ArrayList() {
 
     this.bubbleSort = function () {
         var length = array.length
-        for (let i = 0 i < length i++) {
-            for (let j = 0 j < length - 1 - i j++) {
+        for (let i = 0; i < length; i++) {
+            for (let j = 0; j < length - 1 - i; j++) {
                 if (array[j] > array[j + 1]) {
                     swap(j, j + 1)
                 }
@@ -30,10 +30,10 @@ function ArrayList() {
     // 选择排序
     this.selectionSort = function () {
         var length = array.length, indexMin
-        for (let i = 0 i < length - 1 i++) {
+        for (let i = 0; i < length - 1; i++) {
             indexMin = i
 
-            for (let j = i j < length j++) {
+            for (let j = i; j < length; j++) {
                 if (array[indexMin] > array[j]) {
                     indexMin = j
                 }
@@ -49,7 +49,7 @@ function ArrayList() {
     this.insertionSort = function () {
         var length = array.length, j, temp
 
-        for (var i = 1 i < length i++) {
+        for (var i = 1; i < length; i++) {
             j = i
             temp = array[i]
             while (j > 0 && array[j - 1] > temp) {
@@ -156,7 +156,7 @@ function ArrayList() {
 
     // 顺序查找
     this.sequentialSearch = function (item) {
-        for (let i = 0 i < array.length i++) {
+        for (let i = 0; i < array.length; i++) {
             if (item === array[i]) {
                 return i
             }
@@ -165,7 +165,6 @@ function ArrayList() {
     }
 
     // 二分查找
-
     this.binarySearch = function (item) {
         // 纤排序
         this.quickSort()
@@ -176,10 +175,10 @@ function ArrayList() {
             mid = Math.floor((low + high) / 2)
             element = array[mid]
 
-            if(element < item) {
+            if (element < item) {
                 low = mid + 1
-            } else if(element > item) {
-                high = mid -1
+            } else if (element > item) {
+                high = mid - 1
             } else {
                 return mid
             }
@@ -190,27 +189,7 @@ function ArrayList() {
 
     }
 
-
-
-
-
 }
 
+module.exports = ArrayList
 
-
-var createSoreArray = function (length) {
-    let arr = new ArrayList()
-    for (let i = 0 i < length i++) {
-        arr.insert(parseInt(Math.random() * 100))
-    }
-    return arr
-}
-
-
-var array = createSoreArray(5)
-
-console.log(array.toString())
-
-array.selectionSort()
-
-console.log(array.toString())

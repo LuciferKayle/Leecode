@@ -1,4 +1,4 @@
-const Queue = require('../source/queue')
+const { Queue } = require('../index')
 
 // 优先队列的实现(带有权重的队列)
 function PriorityQueue() {
